@@ -1,21 +1,28 @@
 import {useState} from 'react'
 
 function App() {
+  // useState Todo
   const [todo, setTodo] = useState("")
+  // useState TodoList
   const [todos, setTodos] = useState([])
+  /** detect Input To Do */
   const onChange = (event) => setTodo(event.target.value)
+  /** add To Do to To Do List*/
   const onSubmit = (event) => {
+    // preventDefault() for prevent default action 
     event.preventDefault();
+    // when todo empty or same, no action 
     if (todo === "" || todos.find(item => item === todo)) return
+    // ...currentArray is disasemble the Array
     setTodos(currentArray => [todo, ...currentArray])
     setTodo("")
   }
+  /** remove To Do */
   const rmTodo = (event) => {
     event.preventDefault();
-    // console.log("##event", event)
     setTodos(currentArray => [...currentArray.filter(element => element !== event.target.innerText)])
   }
-  // console.log("todos:", todos)
+
   return (
     <div>
       <h1>To Do List ({todos.length})</h1>
