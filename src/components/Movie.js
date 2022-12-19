@@ -1,7 +1,9 @@
-function Movie({title, genres, rating, img, summary}) {
+import { Link } from 'react-router-dom'
+
+function Movie({ title, genres, rating, img, summary }) {
     return (
     <div style={{ border: "solid 1px", padding: "10px", margin: "20px" }}>
-              <h2>{title}</h2>
+        <h2><Link to='/movie'>{title}</Link></h2>
               <span style={{ fontWeight: "bold" }}>Genre: {genres.map(genre => <span key={genre}>{genre}{' '}</span>)}</span>
               <br />
               <span style={{ fontWeight: "bold" }}>Rating: {rating}</span>
