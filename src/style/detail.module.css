@@ -1,0 +1,13 @@
+.detailContainer {
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+}
+.img {
+    padding: 20px
+}
+.textContainer {
+    padding: 10px;
+    margin: 20px;
+    font-weight: bold;
+}

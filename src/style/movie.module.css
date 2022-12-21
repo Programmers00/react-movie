@@ -1,0 +1,69 @@
+.movieContainer {
+    background-color: #0B0705;
+    border-radius: 10%;
+    margin: 120px 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 17px 18px 10px#767676;
+}
+
+.imgContainer{
+    background-color: transparent;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+}
+
+.img {
+    width: 270px;
+    height: 385px;
+    position: relative;
+    scale: 90%;
+    top: -50px
+}
+
+.img:hover {
+    animation: imgOut 1.2s ease-out forwards;
+}
+
+
+.hiddenContainer {
+    background-color: #080402;
+    height: 300px;
+    z-index: 1;
+    text-align: center;
+    align-items: center;
+}
+
+.text {
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+@keyframes imgOut {
+    0% {
+        top: -50px;
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    
+    40% {
+        top: -275px;
+        scale: 93%;
+        animation-timing-function: cubic-bezier(0.315, 0.32, 0.465, 0.54);
+    }
+
+    50% {
+        top: -300px;
+        scale: 95%;
+        z-index: 2;
+    }
+
+    100% {
+        scale: 115%;
+        z-index: 2;
+        top: 0px;
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+}

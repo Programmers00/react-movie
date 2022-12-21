@@ -1,18 +1,17 @@
 import { Link } from 'react-router-dom'
+import styles from '../style/movie.module.css'
 
-function Movie({ title, genres, rating, img, summary }) {
-    return (
-    <div style={{ border: "solid 1px", padding: "10px", margin: "20px" }}>
-        <h2><Link to='/movie'>{title}</Link></h2>
-              <span style={{ fontWeight: "bold" }}>Genre: {genres.map(genre => <span key={genre}>{genre}{' '}</span>)}</span>
-              <br />
-              <span style={{ fontWeight: "bold" }}>Rating: {rating}</span>
-              <br />
-              <div style={{ display: "flex" }}>
-                <img style={{ padding: "20px" , width: '270px', height: '385px'}} alt='NoImage' src={img} />
-                <h4 style={{ padding: "20px" }}>{summary}</h4>
-              </div>
-        </div>
-    )
+function Movie({ id, title, genres, img, summary }) {
+  return (
+    <div className={ styles.movieContainer}>
+      <div className={ styles.imgContainer}>
+        <Link to={`/movie/${id}`}><img className={styles.img} alt='NoImage' src={img} /></Link>
+      </div>
+      <div className={ styles.hiddenContainer}>
+        <h4 className={styles.text}>{title}</h4>
+            <span className={styles.text}>Genre: {genres.map(genre => <span key={genre}>{genre}{' '}</span>)}</span>
+      </div>
+    </div>
+  )
 }
 export default Movie;
