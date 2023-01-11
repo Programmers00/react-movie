@@ -20,7 +20,8 @@
     height: 385px;
     position: relative;
     scale: 90%;
-    top: -50px
+    top: -50px;
+    animation: imgIn 1.2s ease-out forwards;
 }
 
 .img:hover {
@@ -61,6 +62,32 @@
     }
 
     100% {
+        scale: 115%;
+        z-index: 2;
+        top: 0px;
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+}
+
+@keyframes imgIn {
+    100% {
+        top: -50px;
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    50% {
+        top: -275px;
+        scale: 93%;
+        animation-timing-function: cubic-bezier(0.315, 0.32, 0.465, 0.54);
+    }
+
+    40% {
+        top: -300px;
+        scale: 95%;
+        z-index: 2;
+    }
+
+    0% {
         scale: 115%;
         z-index: 2;
         top: 0px;
